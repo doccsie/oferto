@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оферто — договоры из реестра за минуту</title>
+<meta name="description" content="Оферто превращает реестр исполнителей в готовые договоры-оферты. Загрузите Excel — получите пакет документов. Данные не покидают ваш браузер.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128220;</text></svg>">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">Оферто<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="#how">Как работает</a>
+      <a href="#features">О сервисе</a>
+      <a href="#format">Формат данных</a>
+      <a class="btn" href="app.html">Личный кабинет</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Документы для внештатных исполнителей</div>
+        <h1>Реестр исполнителей&nbsp;— в&nbsp;готовые договоры. Одним файлом.</h1>
+        <p class="lead">Загрузите Excel-реестр с данными исполнителей — Оферто заполнит договор-оферту на каждого и отдаст пакет документов архивом. Без ручного копирования паспортных данных по одному полю.</p>
+        <div class="hero-actions">
+          <a class="btn" href="app.html">Сформировать договоры</a>
+          <a class="btn btn-ghost" href="#how">Как это работает</a>
+        </div>
+      </div>
+      <div class="doc-card" id="liveDoc" aria-label="Пример заполнения договора">
+        <div class="doc-title">ДОГОВОР ВОЗМЕЗДНОГО ОКАЗАНИЯ УСЛУГ<br>(ПУБЛИЧНАЯ ОФЕРТА) № 14-26</div>
+        <span class="field"><span class="label">Исполнитель: </span><span class="slot" data-value="Иванов Иван Иванович">{FIO}</span></span>
+        <span class="field"><span class="label">Статус: </span><span class="slot" data-value="Самозанятый">{Status}</span></span>
+        <span class="field"><span class="label">ИНН </span><span class="slot" data-value="123456789101">{INN}</span></span>
+        <span class="field"><span class="label">Паспорт: </span><span class="slot" data-value="1607 068762">{SerialNumbPas}</span></span>
+        <span class="field"><span class="label">Специальность: </span><span class="slot" data-value="Юрист">{Specialty}</span></span>
+        <div class="stamp">Оферто · заполнено</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="how">
+    <div class="wrap">
+      <h2>Три шага до пакета документов</h2>
+      <p class="section-intro">Никаких интеграций и настроек. Процесс занимает меньше минуты — даже если в реестре сто человек.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="glyph">шаг 1 · .xlsx</div>
+          <h3>Загрузите реестр</h3>
+          <p>Возьмите наш шаблон Excel или свой файл с данными исполнителей: ФИО, паспорт, ИНН, СНИЛС, статус, реквизиты.</p>
+        </div>
+        <div class="step">
+          <div class="glyph">шаг 2 · проверка</div>
+          <h3>Проверьте данные</h3>
+          <p>Оферто покажет, как распознал таблицу: кто попал в реестр и каких полей не хватает — до того, как что-то будет сформировано.</p>
+        </div>
+        <div class="step">
+          <div class="glyph">шаг 3 · .zip</div>
+          <h3>Скачайте договоры</h3>
+          <p>На каждого исполнителя — отдельный договор-оферта в формате Word, все вместе — одним архивом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="features">
+    <div class="wrap">
+      <h2>О сервисе</h2>
+      <p class="section-intro">Оферто — инструмент для компаний, которые работают с внештатными исполнителями: самозанятыми, ИП и физлицами. Мы автоматизируем самую нудную часть — подготовку типовых документов.</p>
+      <div class="feature-grid">
+        <div class="feature privacy">
+          <h3>Данные не покидают браузер</h3>
+          <p>Реестр обрабатывается прямо на вашем компьютере. Паспортные данные и реквизиты не загружаются ни на какой сервер — у нас его попросту нет.</p>
+        </div>
+        <div class="feature">
+          <h3>Юридически выверенный шаблон</h3>
+          <p>Договор-оферта возмездного оказания услуг с заданием, актом и анкетой исполнителя. Подходит для самозанятых, ИП и физлиц, в том числе иностранных.</p>
+        </div>
+        <div class="feature">
+          <h3>Любой размер реестра</h3>
+          <p>Два исполнителя или двести — договоры формируются пакетом за секунды, каждый файл назван по ФИО исполнителя.</p>
+        </div>
+        <div class="feature">
+          <h3>Прозрачный формат</h3>
+          <p>Обычная таблица Excel с понятными колонками. Пример файла с подсказками-плейсхолдерами можно скачать в личном кабинете.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="format">
+    <div class="wrap">
+      <h2>Какие данные нужны</h2>
+      <p class="section-intro">Одна строка таблицы — один исполнитель. Колонки распознаются по названиям, порядок не важен.</p>
+      <div class="preview-wrap">
+        <table class="format-table">
+          <thead><tr><th>Колонка</th><th>Пример</th><th>Куда попадает в договоре</th></tr></thead>
+          <tbody>
+            <tr><td>ФИО</td><td>Иванов Иван Иванович</td><td><code>{FIO}</code> — преамбула, анкета, реквизиты</td></tr>
+            <tr><td>Серия и номер паспорта</td><td>1607 068762</td><td><code>{SerialNumbPas}</code></td></tr>
+            <tr><td>Кем выдан / Дата выдачи</td><td>Отделением УФМС… / 01.01.2020</td><td><code>{Issued}</code>, <code>{IssuedDate}</code></td></tr>
+            <tr><td>Место регистрации</td><td>г. Калуга, ул. Примерная, 1</td><td><code>{Registration}</code></td></tr>
+            <tr><td>ИНН, СНИЛС</td><td>123456789101, 123-456-789 10</td><td><code>{INN}</code>, <code>{SNILS}</code></td></tr>
+            <tr><td>Налоговый статус</td><td>Самозанятый / ИП / Физлицо</td><td><code>{Status}</code></td></tr>
+            <tr><td>Специальность</td><td>Юрист</td><td><code>{Specialty}</code></td></tr>
+            <tr><td>Email</td><td>ivanov@example.com</td><td><code>{EMAIL}</code></td></tr>
+            <tr><td>Банковские реквизиты</td><td>счёт, банк, БИК, корр. счёт</td><td><code>{AccNumb}</code>, <code>{BANK}</code>, <code>{BIC}</code>, <code>{CorrAcc}</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Попробуйте на своём реестре</h2>
+      <a class="btn" href="app.html">Открыть личный кабинет</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Оферто. Сервис подготовки документов.</span>
+    <span class="version-stamp">v0.1.0 · MVP</span>
+  </div>
+</footer>
+
+<script>
+// живая подстановка плейсхолдеров в герое
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const slots = document.querySelectorAll('#liveDoc .slot');
+  if (reduce) { slots.forEach(s => { s.textContent = s.dataset.value; s.classList.add('filled'); }); return; }
+  slots.forEach(s => { s.dataset.placeholder = s.textContent; });
+  let i = 0;
+  function fillNext() {
+    if (i >= slots.length) { setTimeout(reset, 3500); return; }
+    const s = slots[i++];
+    const value = s.dataset.value;
+    s.classList.add('filled');
+    let pos = 0;
+    s.textContent = '';
+    const t = setInterval(() => {
+      s.textContent = value.slice(0, ++pos);
+      if (pos >= value.length) { clearInterval(t); setTimeout(fillNext, 260); }
+    }, 28);
+  }
+  function reset() {
+    slots.forEach(s => { s.classList.remove('filled'); s.textContent = s.dataset.placeholder; });
+    i = 0;
+    setTimeout(fillNext, 900);
+  }
+  setTimeout(fillNext, 1100);
+})();
+</script>
+</body>
+</html>

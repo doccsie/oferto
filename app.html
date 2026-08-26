@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Личный кабинет — Оферто</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128220;</text></svg>">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">Оферто<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="index.html#how">Как работает</a>
+      <a href="index.html#format">Формат данных</a>
+    </nav>
+  </div>
+</header>
+
+<main class="app-main">
+  <div class="wrap">
+    <div class="app-head">
+      <h1>Личный кабинет</h1>
+      <p>Загрузите реестр исполнителей — проверьте, как распознались данные, — скачайте архив с договорами. Всё происходит в вашем браузере: файлы никуда не отправляются.</p>
+    </div>
+
+    <div class="panel">
+      <h2>1. Шаблоны</h2>
+      <p class="hint">Если формируете реестр впервые — скачайте пример: в нём нужные колонки и две строки-образца. Шаблон договора можно посмотреть, чтобы понять, что будет заполнено.</p>
+      <div class="tpl-links">
+        <a class="btn btn-ghost" href="templates/registry_example.xlsx" download>Скачать пример реестра (.xlsx)</a>
+        <a class="btn btn-ghost" href="templates/contract_template.docx" download>Шаблон договора (.docx)</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>2. Реестр исполнителей</h2>
+      <p class="hint">Файл .xlsx, одна строка — один исполнитель. Колонки распознаются по названиям, порядок не важен.</p>
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Загрузить файл реестра">
+        Перетащите файл сюда или <strong>выберите на компьютере</strong>
+        <div class="sub">.xlsx · до 10 МБ</div>
+      </div>
+      <input type="file" id="fileInput" accept=".xlsx,.xls" hidden>
+      <div id="fileChip"></div>
+    </div>
+
+    <div class="panel" id="previewPanel" hidden>
+      <h2>3. Проверка данных</h2>
+      <p class="hint" id="previewHint"></p>
+      <div class="preview-wrap" id="previewTable"></div>
+      <div class="gen-row">
+        <button class="btn" id="generateBtn">Сформировать договоры (ZIP)</button>
+        <span class="status-line" id="statusLine" role="status"></span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Оферто. Сервис подготовки документов.</span>
+    <span class="version-stamp">v0.1.0 · MVP</span>
+  </div>
+</footer>
+
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="vendor/pizzip.min.js"></script>
+<script src="vendor/docxtemplater.min.js"></script>
+<script src="vendor/jszip.min.js"></script>
+<script src="vendor/FileSaver.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
