@@ -1,0 +1,4 @@
+node_modules/
+test/out.zip
+test/shot_*.png
+.DS_Store
