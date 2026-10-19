@@ -1,0 +1,60 @@
+name: Auto-tag version
+
+# Ставит аннотированный тег vX.Y.Z по штампу версии в подвале сайта.
+# Источник истины — <span class="version-stamp">vX.Y.Z …</span> в index.html;
+# штамп в app.html обязан совпадать.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-tag
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version stamps
+        id: ver
+        run: |
+          extract() {
+            grep -oE 'class="version-stamp">v[0-9]+\.[0-9]+\.[0-9]+' "$1" \
+              | head -1 | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+'
+          }
+          V_INDEX=$(extract index.html)
+          V_APP=$(extract app.html)
+          echo "index.html: ${V_INDEX:-не найден}, app.html: ${V_APP:-не найден}"
+          if [ -z "$V_INDEX" ] || [ -z "$V_APP" ]; then
+            echo "::error::Не найден штамп версии vX.Y.Z в подвале index.html или app.html"
+            exit 1
+          fi
+          if [ "$V_INDEX" != "$V_APP" ]; then
+            echo "::error::Штампы версий расходятся: index.html=$V_INDEX, app.html=$V_APP"
+            exit 1
+          fi
+          echo "version=$V_INDEX" >> "$GITHUB_OUTPUT"
+
+      - name: Create annotated tag if missing
+        env:
+          VERSION: ${{ steps.ver.outputs.version }}
+        run: |
+          if git rev-parse -q --verify "refs/tags/$VERSION" >/dev/null; then
+            echo "Тег $VERSION уже есть ($(git rev-parse --short "$VERSION^{commit}")) — пропускаю."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          SUBJECT=$(git log -1 --pretty=%s)
+          git tag -a "$VERSION" -m "$VERSION" -m "$SUBJECT"
+          git push origin "refs/tags/$VERSION"
+          echo "Поставлен тег $VERSION на $(git rev-parse --short HEAD)"
